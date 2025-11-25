@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+.icon-star {
+  mask-image: url(star.svg);
+  -webkit-mask-image: url(star.svg);
+}
+.icon-time {
+  mask-image: url(time.svg);
+  -webkit-mask-image: url(time.svg);
+}
+.icon-language {
+  mask-image: url(language.svg);
+  -webkit-mask-image: url(language.svg);
+}
+.icon-symbols{
+    mask-image: url(symbols.svg);
+  -webkit-mask-image: url(symbols.svg);
+}
+.icon-tabler{
+      mask-image: url(tabler.svg);
+  -webkit-mask-image: url(tabler.svg);
+}
+.icon-download{
+       mask-image: url(download.svg);
+  -webkit-mask-image: url(download.svg);
+}
+.icon-update{
+       mask-image: url(update.svg);
+  -webkit-mask-image: url(update.svg);
+}
+.icon-file{
+         mask-image: url(file.svg);
+  -webkit-mask-image: url(file.svg);
+}
+.icon-arrowDown{
+        mask-image: url(arrowDown.svg);
+  -webkit-mask-image: url(arrowDown.svg);
+}
