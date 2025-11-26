@@ -47,3 +47,7 @@
         mask-image: url(arrowDown.svg);
   -webkit-mask-image: url(arrowDown.svg);
 }
+.icon-check{
+        mask-image: url(check.svg);
+  -webkit-mask-image: url(check.svg);
+}

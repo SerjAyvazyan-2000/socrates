@@ -119,3 +119,72 @@ textarea.addEventListener('blur', () => {
     decor.style.opacity = "1";
   }
 });
+
+const input = document.querySelector('.input-wrapper input');
+const inputDecor = document.querySelector('.input-wrapper .input-decor');
+
+input.addEventListener('focus', () => {
+  input.placeholder = "";   
+  inputDecor.style.opacity = "0";   
+});
+
+input.addEventListener('blur', () => {
+  if (input.value.trim() === "") {
+    input.placeholder = "Иван Иванов";
+    inputDecor.style.opacity = "1";
+  }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const selects = document.querySelectorAll(".presentation-select");
+
+    selects.forEach(select => {
+        const header = select.querySelector(".presentation-select-header p");
+        const headerWrapper = select.querySelector(".presentation-select-header");
+        const options = select.querySelectorAll(".presentation-select-options p");
+
+        headerWrapper.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            selects.forEach(s => {
+                if (s !== select) s.classList.remove("active");
+            });
+
+            select.classList.toggle("active");
+        });
+
+        options.forEach(option => {
+            option.addEventListener("click", (e) => {
+                e.stopPropagation();
+
+                header.textContent = option.textContent;  
+                select.classList.remove("active");        
+            });
+        });
+    });
+
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".presentation-select")
+            .forEach(select => select.classList.remove("active"));
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".design-item");
+
+    if (items.length > 0) {
+        items[0].classList.add("active");
+    }
+
+    items.forEach(item => {
+        item.addEventListener("click", () => {
+
+            items.forEach(i => i.classList.remove("active"));
+
+            item.classList.add("active");
+        });
+    });
+});

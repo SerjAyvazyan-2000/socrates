@@ -655,64 +655,121 @@ header {
   max-width: 964px;
   width: 100%;
   gap: 20px;
+  position: relative;
+  z-index: 3;
 }
 .presentation-selects {
   gap: 20px;
   flex-wrap: wrap;
 }
 .presentation-select {
+  position: relative;
+  z-index: 3;
+}
+.presentation-select.active .presentation-select-options {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px;
+}
+.presentation-select.active i {
+  transform: rotate(180deg);
+}
+.presentation-select-header {
+  gap: 17px;
   background: #f8f9fb;
   padding: 14px 24px;
   border-radius: 6px;
-  gap: 17px;
   cursor: pointer;
 }
-.presentation-select p {
+.presentation-select-header p {
   font-weight: 500;
   font-size: 16px;
-  color: #1F1F1F;
+  color: #1f1f1f;
   line-height: 20px;
-    transition: .4s;
-
+  transition: 0.4s;
 }
-.presentation-select i {
+.presentation-select-header i {
   font-size: 17px;
   background: #000000;
-  transition: .4s;
+  transition: 0.4s;
 }
 
-.presentation-select:hover p {
+.presentation-select-header:hover p {
   color: #1252d3;
 }
-.presentation-select:hover i {
+.presentation-select-header:hover i {
   background: #1252d3;
 }
-.presentation-select-clue{
-    background: #f8f9fb;
+.presentation-select-clue {
+  background: #f8f9fb;
   padding: 14px 24px;
   border-radius: 6px;
   gap: 12px;
   cursor: pointer;
   flex-wrap: wrap;
 }
-.presentation-select-clue p{
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-color: #1F1F1F;
-
-
-}
-.presentation-select-clue span{
-color: #464551;
-font-weight: 500;
-font-size: 16px;
-line-height: 20px;
-display: block;
-
+.presentation-select-clue p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1f1f1f;
 }
 
-
+.presentation-select-options {
+  padding: 10px 24px;
+  background: #f8f9fb;
+  border-radius: 6px;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50px;
+  transition: 0.3s;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.presentation-select-options p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #464551;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.presentation-select-options p:hover {
+  color: #1252d3;
+}
+.input-wrapper {
+  position: relative;
+  z-index: 2;
+}
+.input-wrapper input {
+  background: #f8f9fb;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+}
+.input-wrapper input::placeholder {
+  color: #464551;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+.input-decor {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  color: #000;
+  pointer-events: none;
+  opacity: 1;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
 .presentation-box-wrapper {
   width: 100%;
   min-height: 224px;
@@ -799,11 +856,28 @@ display: block;
   max-width: 311px;
   width: 100%;
   display: flex;
+  border-radius: 13px;
+  border: 3px solid transparent;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.design-item:hover {
+  border: 3px solid #1252d3;
+}
+.design-item.active {
+  border: 3px solid #1252d3;
+}
+.design-item img {
+  border-radius: 10px;
+  display: flex;
 }
 .designs-swiper-slide {
   gap: 10px;
 }
 .designs-swiper-block {
+  display: none;
+}
+.design-item-icon {
   display: none;
 }
 
@@ -1061,11 +1135,37 @@ footer {
     display: block;
     margin-top: 25px;
   }
+
   .designs-items {
     display: none;
   }
   .design-item {
     max-width: 100%;
+    position: relative;
+    border-radius: 19px;
+  }
+  .design-item.active .design-item-icon {
+    opacity: 1;
+    visibility: visible;
+  }
+  .design-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    background: #1252d3;
+    border-radius: 6px;
+    width: 48px;
+    height: 48px;
+    top: 15px;
+    left: 16px;
+    position: absolute;
+  }
+  .design-item-icon i {
+    background: #ffffff;
+    font-size: 21px;
   }
   .examples-items {
     display: none !important;
@@ -1201,16 +1301,16 @@ footer {
     font-size: 8px;
     line-height: 100%;
   }
-  .presentation-box-wrapper{
+  .presentation-box-wrapper {
     padding: 15px;
   }
-  .textarea-tolls label span{
+  .textarea-tolls label span {
     display: none;
   }
-  .textarea-tolls label{
+  .textarea-tolls label {
     padding: 14px;
   }
-  .presentation-selects{
+  .presentation-selects {
     gap: 10px;
   }
 }
