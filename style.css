@@ -706,13 +706,13 @@ header {
   border-radius: 6px;
   gap: 12px;
   cursor: pointer;
-  flex-wrap: wrap;
 }
 .presentation-select-clue p {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #1f1f1f;
+  white-space: nowrap;
 }
 
 .presentation-select-options {
@@ -752,6 +752,8 @@ header {
   font-size: 16px;
   line-height: 20px;
   color: black;
+  max-width: 150px;
+  width: 100%;
 }
 .input-wrapper input::placeholder {
   color: #464551;
@@ -1142,7 +1144,6 @@ footer {
   .design-item {
     max-width: 100%;
     position: relative;
-    border-radius: 19px;
   }
   .design-item.active .design-item-icon {
     opacity: 1;
@@ -1313,7 +1314,17 @@ footer {
   .presentation-selects {
     gap: 10px;
   }
+  .presentation-select-clue{
+    width: 100%;
+  }
+  .presentation-select{
+    flex: 1 1 auto;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 360px) {
+  .presentation-select-clue {
+ 
+  flex-wrap: wrap;
+}
 }
